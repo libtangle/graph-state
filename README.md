@@ -42,4 +42,3 @@ These were introduced in the paper about entanglement purification ([here](https
 > \mathcal{P}_n = \{\pm1, \pm i\} \cdot \{I, X, Y, Z\}^{\otimes n}.
 > $$
 >
-
