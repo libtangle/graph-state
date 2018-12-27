@@ -314,3 +314,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/c++,node,cmake,macos,linux,python,windows
+
+.vscode
