@@ -2,12 +2,12 @@ from graph_state import GraphState
 import random
 
 # Use 30 qubits
-num_qubits = 3000000
+num_qubits = 30
 
 g = GraphState(num_qubits)
 
-# Apply 3000 operations
-for i in range(3000):
+# Apply 300000 operations
+for i in range(300000):
   use_cz = random.choice([True, False])
 
   if use_cz:
@@ -18,10 +18,10 @@ for i in range(3000):
     target = random.choice(range(num_qubits))
     g.apply(operator, target)
 
-# g.draw()
+g.draw()
 
-outcome = ''
-for i in range(num_qubits):
-  outcome += str(g.measure(i))
+# outcome = ''
+# for i in range(num_qubits):
+#   outcome += str(g.measure(i))
 
 # print(outcome)

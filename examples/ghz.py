@@ -4,10 +4,8 @@ from collections import Counter
 results = []
 for i in range(1000):
   g = GraphState(2)
-  g.apply(10, 0)
-  g.apply(10, 1)
-  g.cz(0, 1)
-  g.apply(10, 1)
+  g.h(0)
+  g.cx(0, 1)
 
   if i == 0:
     g.draw()

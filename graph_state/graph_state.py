@@ -12,11 +12,32 @@ class GraphState(object):
       self.vertices.append(QubitVertex())
   
   ########################################################
-  # Simulation Methods (for things such as drawing)
+  # Simulation Methods
   ########################################################
 
   def apply(self, vop, target):
     self.vertices[target].apply(vop)
+
+  def h(self, target):
+    self.apply(10, target)
+
+  def x(self, target):
+    self.apply(1, target)
+  
+  def y(self, target):
+    self.apply(2, target)
+  
+  def z(self, target):
+    self.apply(3, target)
+
+  def id(self, target):
+    pass
+
+  def s(self, target):
+    self.apply(6, target)
+
+  def s_dagger(self, target):
+    self.apply(5, target)
 
   def cz(self, control, target):
     if self.vertices[control].is_isolated(target):
@@ -65,6 +86,10 @@ class GraphState(object):
     
     return int(choice)
 
+  def cx(self, control, target):
+    self.h(target)
+    self.cz(control, target)
+    self.h(target)
 
   ########################################################
   # Computation Algorithms see https://arxiv.org/abs/quant-ph/0504117.pdf)
